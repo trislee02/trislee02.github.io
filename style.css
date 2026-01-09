@@ -17,8 +17,8 @@
     --color-link-hover: #1e293b;
     
     /* Typography */
-    --font-heading: 'Playfair Display', Georgia, serif;
-    --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Lora', Georgia, serif;
+    --font-body: 'Lora', Georgia, serif;
     
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -83,10 +83,11 @@ body {
    ============================================ */
 .hero {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-lg);
     margin-bottom: var(--spacing-lg);
     animation: fadeInUp 0.6s ease-out;
 }
@@ -114,15 +115,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .name {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--color-primary);
     margin-bottom: var(--spacing-xs);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
 }
 
 .title {
@@ -139,9 +141,7 @@ body {
 }
 
 .title .affiliation {
-    font-family: var(--font-heading);
-    font-style: italic;
-    font-weight: 400;
+    font-weight: 500;
     color: var(--color-accent);
 }
 
@@ -202,9 +202,9 @@ body {
 }
 
 .section-title {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--color-primary);
     margin-bottom: var(--spacing-md);
     padding-bottom: var(--spacing-xs);
@@ -276,7 +276,7 @@ body {
 
 .pub-authors strong {
     color: var(--color-text);
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .pub-venue {
@@ -288,8 +288,18 @@ body {
 }
 
 .venue-name {
-    color: var(--color-accent);
+    color: #ffffff;
+    font-weight: 500;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    padding: 0.125rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.8125rem;
+}
+
+.venue-under-review {
+    color: var(--color-text-muted);
     font-style: italic;
+    font-size: 0.8125rem;
 }
 
 .pub-year {
@@ -365,6 +375,10 @@ body {
 @media (max-width: 640px) {
     .container {
         padding: var(--spacing-md) var(--spacing-sm);
+    }
+    
+    .hero {
+        flex-direction: column;
     }
     
     .profile-photo img,
